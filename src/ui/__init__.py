@@ -1,0 +1,1 @@
+"""G360 ERP Price Manager — Flet-based desktop UI."""

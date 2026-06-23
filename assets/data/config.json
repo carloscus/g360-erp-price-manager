@@ -1,0 +1,83 @@
+{
+  "PRIMARY_CATEGORIES": ["VINIBALL", "VINIFAN", "REPRESENTADAS"],
+  "GRUPO_MAP": {
+    "VINIBALL": "DEPORTES",
+    "VINIFAN": "ESCOLAR",
+    "REPRESENTADAS": "REPRESENTADAS",
+    "PELOTAS": "DEPORTES",
+    "MASCOTAS": "DEPORTES",
+    "FORROS": "ESCOLAR",
+    "ARCHIVO": "ESCOLAR",
+    "PINTURA": "ESCOLAR",
+    "ESCRITURA": "ESCOLAR",
+    "ACCESORIOS": "ESCOLAR",
+    "DIBUJO": "ESCOLAR",
+    "DIDACTICOS": "ESCOLAR",
+    "MANUALIDADES": "ESCOLAR",
+    "PEGAMENTOS": "ESCOLAR",
+    "ESCOLAR": "ESCOLAR",
+    "METALICA": "ESCOLAR"
+  },
+  "DEFAULT_DISCOUNTS_BY_CATEGORY": {
+    "VINIFAN": [0.25, 0.04],
+    "VINIBALL": [0.15, 0.10, 0.03],
+    "REPRESENTADAS": [0.25, 0.04]
+  },
+  "PRESET_DESCUENTOS": {
+    "VINIFAN": [
+      {"label": "25-4", "discounts": [0.25, 0.04], "fixed": [], "rebate": 0},
+      {"label": "22-4", "discounts": [0.22, 0.04], "fixed": [], "rebate": 0},
+      {"label": "25-5", "discounts": [0.25, 0.05], "fixed": [], "rebate": 0},
+      {"label": "25-5-2", "discounts": [0.25, 0.05], "fixed": [0.02], "rebate": 0},
+      {"label": "25-4-3-2", "discounts": [0.25, 0.04], "fixed": [0.03, 0.02], "rebate": 0},
+      {"label": "25-4-R2", "discounts": [0.25, 0.04], "fixed": [], "rebate": 0.02}
+    ],
+    "VINIBALL": [
+      {"label": "15-10-3", "discounts": [0.15, 0.10], "fixed": [0.03], "rebate": 0},
+      {"label": "15-10-5", "discounts": [0.15, 0.10], "fixed": [0.05], "rebate": 0},
+      {"label": "15-7-3", "discounts": [0.15, 0.07], "fixed": [0.03], "rebate": 0},
+      {"label": "15-10-3-2", "discounts": [0.15, 0.10], "fixed": [0.03, 0.02], "rebate": 0},
+      {"label": "15-10-R2", "discounts": [0.15, 0.10], "fixed": [], "rebate": 0.02}
+    ],
+    "REPRESENTADAS": [
+      {"label": "25-4", "discounts": [0.25, 0.04], "fixed": [], "rebate": 0},
+      {"label": "25-5", "discounts": [0.25, 0.05], "fixed": [], "rebate": 0},
+      {"label": "25-5-2", "discounts": [0.25, 0.05], "fixed": [0.02], "rebate": 0},
+      {"label": "25-4-3-2", "discounts": [0.25, 0.04], "fixed": [0.03, 0.02], "rebate": 0},
+      {"label": "25-4-R2", "discounts": [0.25, 0.04], "fixed": [], "rebate": 0.02}
+    ]
+  },
+  "FIELD_KEYWORDS": {
+    "sku": ["CÓDIGO", "CODIGO", "SKU", "COD.", "ITEM", "CÓD", "COD", "CÓDIGO INTERNO"],
+    "description": ["ARTÍCULO", "DESCRIPCIÓN", "DESCRIPCION", "PRODUCTO", "NOMBRE", "NOMBRE CORTO", "NOM"],
+    "full_name": ["NOMBRE COMPLETO", "DESCRIPCIÓN COMPLETA", "DESCRIPCION COMPLETA", "NOM COMPLETO"],
+    "line": ["LÍNEA", "LINEA", "LIN", "RUBRO", "GRUPO LIN", "LINEA DE PRODUCTO", "LINEA_PROD"],
+    "category": ["CATEGORÍA", "CATEGORIA", "CAT", "DEPARTAMENTO", "TIPO PRODUCTO", "TIPO_PROD", "CLASE"],
+    "family": ["FAMILIA", "FAM", "SUBCATEGORÍA", "SUBCATEGORIA"],
+    "group": ["GRUPO", "GRU", "MARCA", "SECCIÓN", "SECCION"],
+    "units_per_box": ["U/BX", "UN/BOX", "U.M.", "UM", "UNIDAD", "UNID", "UOM", "UN/BX", "UNDXCAJ"],
+    "list_price": ["P. LISTA", "PRECIO LISTA", "P.LISTA", "PLIST", "PRECIO", "P.L", "PRECIO BASE", "P. BASE"],
+    "desc1": ["D1", "DESC1", "DESC. 1", "DESCUENTO 1", "DSCTO1", "DESC 1"],
+    "desc2": ["D2", "DESC2", "DESC. 2", "DESCUENTO 2", "DSCTO2", "DESC 2"],
+    "desc3": ["D3", "DESC3", "DESC. 3", "DESCUENTO 3", "DSCTO3", "DESC 3"],
+    "desc4": ["D4", "DESC4", "DESC. 4", "DESCUENTO 4", "DSCTO4", "DESC 4"],
+    "desc5": ["D5", "DESC5", "DESC. 5", "DESCUENTO 5", "DSCTO5", "DESC 5"],
+    "desc6": ["D6", "DESC6", "DESC. 6", "DESCUENTO 6", "DSCTO6", "DESC 6"],
+    "desc7": ["D7", "DESC7", "DESC. 7", "DESCUENTO 7", "DSCTO7", "DESC 7"],
+    "fixed_price": ["P. FIJO", "PRECIO FIJO", "P.FIJO", "PFIJO", "PRECIO ESPECIAL", "P.ESP"],
+    "net_price": ["P. NETO", "PRECIO NETO", "P.NETO", "PNET", "PRECIO FINAL"],
+    "price_with_tax": ["P. C/IGV", "P.CIGV", "PRECIO IGV", "P.IGV", "CON IGV"],
+    "stock": ["STOCK", "SALDO", "CANTIDAD", "STOCK TOTAL", "DISPONIBLE", "VES", "V.E.S.", "ALMACEN", "ALMACÉN"],
+    "active": ["ACTIVO", "ACT", "ESTADO", "STATUS", "ST", "S"],
+    "sort_key": ["SORT", "ORDEN", "ORD", "ORDER"],
+    "ean13": ["EAN13", "EAN", "CÓDIGO BARRA", "CODIGO BARRA", "BARRA", "BARCODE"],
+    "weight_kg": ["PESO", "PESO KG", "KG", "PESO(KG)"],
+    "customer_sku": ["SKU CLIENTE", "COD. CLIENTE", "COD CLIENTE", "COD_CLI", "SKU_CLI"],
+    "subcategory": ["SUBCATEGORÍA", "SUBCATEGORIA", "SUBCAT", "TIPO"],
+    "sequence": ["N°", "NUM", "NUMERO", "NO.", "NRO", "#"],
+    "almacen": ["ALMACÉN", "ALMACEN", "DEPÓSITO", "DEPOSITO", "UBICACIÓN"],
+    "sku_unit": ["U.M.", "UM", "UNIDAD", "UNID", "UOM"],
+    "predespacho": ["PREDESPACHO", "PRE-DESPACHO", "PREDESP"],
+    "disponible": ["DISPONIBLE", "DISP.", "SALDO DISPONIBLE"]
+  }
+}

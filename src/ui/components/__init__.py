@@ -1,0 +1,1 @@
+"""Reusable UI components: product table, filter bar, pagination, etc."""

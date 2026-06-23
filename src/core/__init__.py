@@ -1,0 +1,1 @@
+"""G360 ERP Price Manager — Core domain models, engine, and parsers."""

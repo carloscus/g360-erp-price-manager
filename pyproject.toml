@@ -1,0 +1,28 @@
+[project]
+name = "g360-erp-price-list"
+version = "1.1.0"
+description = "G360 ERP Price List - Gestor de listas de precios con descuentos en cascada (CIPSA)"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "flet>=0.23.0",
+    "openpyxl>=3.1.0",
+    "xlrd>=2.0.0",
+    "pandas>=2.0.0",
+    "requests>=2.31.0",
+    "beautifulsoup4>=4.12.0",
+    "python-dotenv>=1.2.2",
+    "g360-core",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-cov>=4.1.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+
+[tool.uv.sources]
+g360-core = { path = "../../tools/g360-cli" }
