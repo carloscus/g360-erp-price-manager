@@ -12,7 +12,6 @@ dependencies = [
     "requests>=2.31.0",
     "beautifulsoup4>=4.12.0",
     "python-dotenv>=1.2.2",
-    "g360-core",
 ]
 
 [dependency-groups]
@@ -68,5 +67,3 @@ disallow_untyped_calls = true
 warn_return_any = true
 no_implicit_optional = true
 
-[tool.uv.sources]
-g360-core = { path = "../g360-cli/py" }

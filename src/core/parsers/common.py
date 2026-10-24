@@ -1,12 +1,13 @@
 """Shared parser utilities: column detection, safe type conversion, header normalization."""
 
-from g360_core.common import (
+from src.core.parsers.text import (
     normalizar_header,
     deaccent,
     match_keyword,
     HEADER_ALIASES,
     safe_float,
     safe_int,
+    FIELD_KEYWORDS,
 )
 
 
@@ -14,7 +15,7 @@ def detectar_columnas(headers: list[str]) -> dict[str, int]:
     from pathlib import Path
     import json
     from src.core.constants import DATA_DIR
-    
+
     field_keywords = {}
     config_path = DATA_DIR / "config.json"
     if config_path.exists():
@@ -26,8 +27,7 @@ def detectar_columnas(headers: list[str]) -> dict[str, int]:
             pass
 
     if not field_keywords:
-        from g360_core.field_keywords import FIELD_KEYWORDS as CORE_FIELD_KEYWORDS
-        field_keywords = CORE_FIELD_KEYWORDS
+        field_keywords = FIELD_KEYWORDS
 
     norm = [normalizar_header(h) for h in headers]
     col_map: dict[str, int] = {}

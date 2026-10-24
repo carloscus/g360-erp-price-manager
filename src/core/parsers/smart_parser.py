@@ -2,13 +2,11 @@
 
 from __future__ import annotations
 
-from g360_core.normalizer import normalizar_valor
+from src.core.parsers.text import normalizar_valor
 from src.core.models import Producto, ParsedSource
 
 
-from src.core.parsers.common import (
-    detectar_columnas, safe_float, safe_int
-)
+from src.core.parsers.common import detectar_columnas, safe_float, safe_int
 
 _DESC_KEYS = [f"desc{i}" for i in range(1, 11)]
 
@@ -23,9 +21,13 @@ def _extraer_descuentos(row: list[str], col_map: dict[str, int]) -> list[float]:
     return [d for d in descuentos if d > 0]
 
 
-def parsear_fuente(filas: list[list[str]], filename: str, sheet_name: str = "") -> ParsedSource:
+def parsear_fuente(
+    filas: list[list[str]], filename: str, sheet_name: str = ""
+) -> ParsedSource:
     if not filas or len(filas) < 2:
-        return ParsedSource(filename=filename, sheet_name=sheet_name, errores=["Archivo vacío"])
+        return ParsedSource(
+            filename=filename, sheet_name=sheet_name, errores=["Archivo vacío"]
+        )
 
     mejor_col_map: dict[str, int] = {}
     mejor_header_row = 0
@@ -58,12 +60,16 @@ def parsear_fuente(filas: list[list[str]], filename: str, sheet_name: str = "") 
 
     all_headers = filas[mejor_header_row]
     mapeadas = set(mejor_col_map.values())
-    no_mapeadas = [str(all_headers[i]).strip() for i in range(len(all_headers)) if i not in mapeadas and str(all_headers[i]).strip()]
+    no_mapeadas = [
+        str(all_headers[i]).strip()
+        for i in range(len(all_headers))
+        if i not in mapeadas and str(all_headers[i]).strip()
+    ]
 
     productos: list[Producto] = []
     errores: list[str] = []
 
-    for row in filas[mejor_header_row + 1:]:
+    for row in filas[mejor_header_row + 1 :]:
         if not any(c and c.strip() for c in row):
             continue
 
@@ -83,9 +89,14 @@ def parsear_fuente(filas: list[list[str]], filename: str, sheet_name: str = "") 
 
         p = Producto(
             sku=normalizar_valor("sku", sku_raw),
-            sequence=normalizar_valor("sequence", _val("sequence")) or len(productos) + 1,
-            description=normalizar_valor("description", _val("description") or _val("full_name")),
-            full_name=normalizar_valor("full_name", _val("full_name") or _val("description")),
+            sequence=normalizar_valor("sequence", _val("sequence"))
+            or len(productos) + 1,
+            description=normalizar_valor(
+                "description", _val("description") or _val("full_name")
+            ),
+            full_name=normalizar_valor(
+                "full_name", _val("full_name") or _val("description")
+            ),
             line=normalizar_valor("line", _val("line")),
             category=normalizar_valor("category", _val("category")),
             family=normalizar_valor("family", _val("family")),

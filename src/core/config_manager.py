@@ -4,7 +4,6 @@ import json
 from pathlib import Path
 from typing import Any
 
-from g360_core.field_keywords import FIELD_KEYWORDS as CORE_FIELD_KEYWORDS
 from src.core.constants import DATA_DIR
 
 
@@ -57,7 +56,9 @@ class ConfigManager:
 
     @property
     def field_keywords(self) -> dict[str, list[str]]:
-        return CORE_FIELD_KEYWORDS
+        # Los alias de columnas viven en assets/data/config.json (capa 1 del
+        # modelo de estandarización). No se hardcodean en el código.
+        return self.get("FIELD_KEYWORDS", {})
 
 
 # Instancia única (Singleton)
