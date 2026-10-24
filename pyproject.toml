@@ -3,7 +3,7 @@ name = "g360-erp-price-list"
 version = "1.1.0"
 description = "G360 ERP Price List - Gestor de listas de precios con descuentos en cascada (CIPSA)"
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.12"
 dependencies = [
     "flet>=0.23.0",
     "openpyxl>=3.1.0",
@@ -24,5 +24,49 @@ dev = [
 [tool.pytest.ini_options]
 pythonpath = ["."]
 
+# ---------------------------------------------------------------------------
+# Ruff: linter + formatter (reemplaza flake8 + isort + black).
+# Misma configuración que usa g360-core para consistencia en el ecosistema.
+# ---------------------------------------------------------------------------
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "C4", "RUF"]
+ignore = [
+    "E501",
+    "RUF001",
+    "RUF002",
+    "RUF003",
+    "B008",
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S101"]
+
+# ---------------------------------------------------------------------------
+# Mypy: tipado estático para el contrato entre repos.
+# ---------------------------------------------------------------------------
+[tool.mypy]
+python_version = "3.12"
+files = ["src"]
+ignore_missing_imports = true
+warn_unused_configs = true
+show_error_codes = true
+
+[[tool.mypy.overrides]]
+module = [
+    "g360_core.common",
+    "g360_core.normalizer",
+    "g360_core.field_keywords",
+]
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+disallow_untyped_calls = true
+warn_return_any = true
+no_implicit_optional = true
+
 [tool.uv.sources]
-g360-core = { path = "../../tools/g360-cli" }
+g360-core = { path = "../g360-cli/py" }
